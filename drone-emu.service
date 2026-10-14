@@ -1,0 +1,13 @@
+[Unit]                                                                                                                                                          
+Description=Drone MAVLink Emulator                                                                                                                            
+After=network.target                                                                                                                                            
+                                                                                                                                                                  
+[Service]
+ExecStart=/opt/drone_singles/runtime/venv/bin/python /home/dronex/main.py --wait-dev 10
+WorkingDirectory=/home/dronex
+Restart=always
+RestartSec=3
+User=dronex
+
+[Install]
+WantedBy=multi-user.target
